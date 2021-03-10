@@ -108,7 +108,8 @@
     "extends": "@istanbuljs/nyc-config-typescript",
     "exclude": [
       "**/*.spec.js"
-    ]
+    ],
+    "lines": 94
   },
   "plugins": [
     "@semantic-release/commit-analyzer",
