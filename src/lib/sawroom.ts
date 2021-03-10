@@ -78,3 +78,17 @@ export const store = async (
   );
   return ts;
 };
+
+export const retrieve = async (
+  uid: string,
+  address = 'http://localhost:8008'
+) => {
+  const res = await axios.get(`${address}/state?address=${uid}`);
+  if (res.data.data.length) {
+    const [result] = await cbor.decodeAll(
+      Buffer.from(res.data.data[0].data, 'base64')
+    );
+    return result[uid];
+  }
+  return undefined;
+};
