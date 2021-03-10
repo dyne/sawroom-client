@@ -10,6 +10,8 @@ type Payload = {
   readonly address: string;
 };
 
+const PREFIX = 'c274b5';
+
 const buildBatch = (payload: Payload) => {
   const context = createContext('secp256k1');
   const privateKey = context.newRandomPrivateKey();
@@ -21,8 +23,8 @@ const buildBatch = (payload: Payload) => {
   const transactionHeaderBytes = protobuf.TransactionHeader.encode({
     familyName: 'restroom',
     familyVersion: '1.0',
-    inputs: ['c274b5'],
-    outputs: ['c274b5'],
+    inputs: [PREFIX],
+    outputs: [PREFIX],
     signerPublicKey: signer.getPublicKey().asHex(),
     batcherPublicKey: signer.getPublicKey().asHex(),
     dependencies: [],
@@ -62,7 +64,7 @@ export const store = async (
   address = 'http://localhost:8008'
 ) => {
   const ts =
-    'c274b5' +
+    PREFIX +
     createHash('sha512').update(Date.now().toString()).digest('hex').slice(-64);
   await axios.post(
     `${address}/batches`,
