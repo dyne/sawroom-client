@@ -61,7 +61,9 @@ export const store = async (
   payload: unknown,
   address = 'http://localhost:8008'
 ) => {
-  const ts = createHash('sha512').update(Date.now().toString()).digest('hex');
+  const ts =
+    'c274b5' +
+    createHash('sha512').update(Date.now().toString()).digest('hex').slice(-64);
   await axios.post(
     `${address}/batches`,
     buildBatch({
