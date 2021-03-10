@@ -72,5 +72,5 @@ export const store = async (
       headers: { 'Content-Type': 'application/octet-stream' },
     }
   );
-  return createHash('sha512').update(ts).digest('hex');
+  return ts;
 };
