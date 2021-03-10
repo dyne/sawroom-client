@@ -1604,7 +1604,7 @@ caseless@~0.12.0:
 
 cbor@^7.0.3:
   version "7.0.3"
-  resolved "https://registry.yarnpkg.com/cbor/-/cbor-7.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/cbor/-/cbor-7.0.3.tgz#216d292f2aedd1bb61414a8f949b63e4de11b33b"
   integrity sha512-Io+lJytjYBJKgJqZQUz2bFaMPj+HtlsnT9kHSUiIJFqzWa05lm5/ycQ+NiZWpks3DR2Fz7j7axiTGeT57w/syg==
   dependencies:
     "@cto.af/textdecoder" "^0.0.0"
