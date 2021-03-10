@@ -7,7 +7,7 @@ import { createContext, CryptoFactory } from 'sawtooth-sdk/signing';
 
 type Payload = {
   readonly value: string;
-  readonly timestamp: string;
+  readonly address: string;
 };
 
 const buildBatch = (payload: Payload) => {
@@ -61,12 +61,12 @@ export const store = async (
   payload: unknown,
   address = 'http://localhost:8008'
 ) => {
-  const ts = Date.now().toString();
+  const ts = createHash('sha512').update(Date.now().toString()).digest('hex');
   await axios.post(
     `${address}/batches`,
     buildBatch({
       value: JSON.stringify(payload),
-      timestamp: ts,
+      address: ts,
     }),
     {
       headers: { 'Content-Type': 'application/octet-stream' },
