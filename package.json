@@ -47,6 +47,7 @@
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@semantic-release/changelog": "^5.0.1",
     "@types/bignumber.js": "^5.0.0",
     "@types/cbor": "^5.0.1",
     "@types/node": "^14.14.33",
