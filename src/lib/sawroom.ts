@@ -64,7 +64,6 @@ export const store = async (
   address = 'http://localhost:8008',
   debug?: boolean
 ) => {
-  console.error(JSON.stringify(payload));
   const ts =
     PREFIX +
     createHash('sha512').update(Date.now().toString()).digest('hex').slice(-64);
