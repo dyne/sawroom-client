@@ -1,7 +1,7 @@
 import { createHash } from 'crypto';
 
 import axios from 'axios';
-import cbor from 'cbor';
+import cbor from 'borc';
 import { protobuf } from 'sawtooth-sdk';
 import { createContext, CryptoFactory } from 'sawtooth-sdk/signing';
 
@@ -61,12 +61,14 @@ const buildBatch = (payload: Payload) => {
 
 export const store = async (
   payload: unknown,
-  address = 'http://localhost:8008'
+  address = 'http://localhost:8008',
+  debug?: boolean
 ) => {
+  console.error(JSON.stringify(payload));
   const ts =
     PREFIX +
     createHash('sha512').update(Date.now().toString()).digest('hex').slice(-64);
-  await axios.post(
+  const r = await axios.post(
     `${address}/batches`,
     buildBatch({
       value: JSON.stringify(payload),
@@ -76,19 +78,20 @@ export const store = async (
       headers: { 'Content-Type': 'application/octet-stream' },
     }
   );
+  if (debug) console.log(r.status, r.data);
   return ts;
 };
 
 export const retrieve = async (
   uid: string,
-  address = 'http://localhost:8008'
+  address = 'http://localhost:8008',
+  debug?: boolean
 ) => {
   const res = await axios.get(`${address}/state?address=${uid}`);
+  if (debug) console.log(res.status, res.data);
   if (res.data.data.length) {
-    const [result] = await cbor.decodeAll(
-      Buffer.from(res.data.data[0].data, 'base64')
-    );
+    const [result] = cbor.decodeAll(res.data.data[0].data, 'base64');
     return result[uid];
   }
-  return undefined;
+  return [];
 };
