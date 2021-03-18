@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/dyne/sawroom-client/compare/v1.5.0...v1.6.0) (2021-03-18)
+
+
+### Features
+
+* ✨  Parse the result on the client ([a97238e](https://github.com/dyne/sawroom-client/commit/a97238e9126a7e50e8d724f6d0fc3cbb4fa670f8))
+
 # [1.5.0](https://github.com/dyne/sawroom-client/compare/v1.4.0...v1.5.0) (2021-03-18)
 
 
