@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/dyne/sawroom-client/compare/v1.4.0...v1.5.0) (2021-03-18)
+
+
+### Features
+
+* 🔖  npm version ([decac21](https://github.com/dyne/sawroom-client/commit/decac21e4ee679019f01f2c6af4c6e1d8d3469c1))
+
 # [1.3.0](https://github.com/dyne/sawroom-client/compare/v1.2.1...v1.3.0) (2021-03-18)
 
 
