@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/dyne/sawroom-client/compare/v1.6.1...v1.6.2) (2021-03-18)
+
+
+### Bug Fixes
+
+* 🐛  Bump deps ([b3ea5f6](https://github.com/dyne/sawroom-client/commit/b3ea5f6f59a14e1b5c8410b7a985ac46371d2c9a))
+
 # [1.6.0](https://github.com/dyne/sawroom-client/compare/v1.5.0...v1.6.0) (2021-03-18)
 
 
