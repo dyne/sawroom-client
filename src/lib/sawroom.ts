@@ -91,6 +91,7 @@ export const retrieve = async (
   if (debug) console.log(res.status, res.data);
   if (res.data.data.length) {
     const [result] = cbor.decodeAll(res.data.data[0].data, 'base64');
+    if (debug) console.log(result[uid]);
     return result[uid];
   }
   return [];
