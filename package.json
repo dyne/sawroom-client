@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@bitauth/libauth": "^1.17.1",
+    "borc": "^2.1.2",
     "axios": "^0.21.1",
     "sawtooth-sdk": "^1.0.5"
   },
@@ -59,7 +60,6 @@
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.12.1",
-    "borc": "^2.1.2",
     "codecov": "^3.5.0",
     "cspell": "^4.1.0",
     "cz-conventional-changelog": "^3.3.0",
