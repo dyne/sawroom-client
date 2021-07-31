@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/dyne/sawroom-client/compare/v1.6.2...v1.7.0) (2021-07-31)
+
+
+### Bug Fixes
+
+* **wallet:** 🚨  Fix lints and allow release by removing cov checks (tests need to be added) ([763a080](https://github.com/dyne/sawroom-client/commit/763a08097f3b787854a42c5baa8831ae548a382e))
+
+
+### Features
+
+* Add functions for querying and updating the wallet ([#1](https://github.com/dyne/sawroom-client/issues/1)) ([45fa71e](https://github.com/dyne/sawroom-client/commit/45fa71ee8f7d1b71208f76b971a228bb16a04e08))
+
 ## [1.6.2](https://github.com/dyne/sawroom-client/compare/v1.6.1...v1.6.2) (2021-03-18)
 
 
