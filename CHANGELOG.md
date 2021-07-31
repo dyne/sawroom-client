@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/dyne/sawroom-client/compare/v1.7.0...v1.8.0) (2021-07-31)
+
+
+### Features
+
+* ✅  Add testing to CI ([0cbfcae](https://github.com/dyne/sawroom-client/commit/0cbfcaef296bfa06372cc75b692c4c9caf1d5611))
+
 # [1.7.0](https://github.com/dyne/sawroom-client/compare/v1.6.2...v1.7.0) (2021-07-31)
 
 
