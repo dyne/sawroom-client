@@ -1,11 +1,11 @@
+/* eslint-disable functional/immutable-data */
 import { createHash } from 'crypto';
 
-
-import axios from 'axios';
 import atob from 'atob';
+import axios from 'axios';
 import cbor from 'borc';
 import { protobuf } from 'sawtooth-sdk';
-import { createContext, CryptoFactory} from 'sawtooth-sdk/signing';
+import { createContext, CryptoFactory } from 'sawtooth-sdk/signing';
 import { Secp256k1PrivateKey } from 'sawtooth-sdk/signing/secp256k1';
 // import retry from 'async/retry';
 
@@ -15,10 +15,10 @@ type Payload = {
 };
 
 const PREFIX = 'c274b5';
-const WALLET_PREFIX='710675';
+const WALLET_PREFIX = '710675';
 
 function hash(v) {
-    return createHash('sha512').update(v).digest('hex');
+  return createHash('sha512').update(v).digest('hex');
 }
 
 // async function is_transaction_valid(link: string) {
@@ -89,20 +89,23 @@ const buildBatchWallet = (privateKeyHex: string, payload: WalletPayload) => {
   const context = createContext('secp256k1');
   const privateKey = Secp256k1PrivateKey.fromHex(privateKeyHex);
   const signer = new CryptoFactory(context).newSigner(privateKey);
-  const address = WALLET_PREFIX + hash(signer.getPublicKey().asHex()).substr(0, 64);
-  var inputs = [address];
-  var outputs = [address];
+  const address =
+    WALLET_PREFIX + hash(signer.getPublicKey().asHex()).substr(0, 64);
+  const inputs = [address];
+  const outputs = [address];
   if (payload.beneficiary_pubkey != undefined) {
-      const toAddress = WALLET_PREFIX + hash(payload.beneficiary_pubkey).substr(0, 64);
-      inputs.push(toAddress);
-      outputs.push(toAddress);
+    const toAddress =
+      WALLET_PREFIX + hash(payload.beneficiary_pubkey).substr(0, 64);
+    inputs.push(toAddress);
+    outputs.push(toAddress);
   }
-  var payloadString = payload.action + ',' + payload.value;
+  // eslint-disable-next-line functional/no-let
+  let payloadString = payload.action + ',' + payload.value;
   if (payload.beneficiary_pubkey != undefined) {
-      payloadString += ',' + payload.beneficiary_pubkey;
+    payloadString += ',' + payload.beneficiary_pubkey;
   }
 
-  const payloadBytes = Uint8Array.from(payloadString, (x) => x.charCodeAt(0))
+  const payloadBytes = Uint8Array.from(payloadString, (x) => x.charCodeAt(0));
 
   const toU = (ba) => Buffer.from(ba, 'utf8');
 
@@ -115,7 +118,7 @@ const buildBatchWallet = (privateKeyHex: string, payload: WalletPayload) => {
     batcherPublicKey: signer.getPublicKey().asHex(),
     dependencies: [],
     payloadSha512: hash(payloadBytes),
-    nonce: "" + Math.random(),
+    nonce: '' + Math.random(),
   }).finish();
 
   const signature = signer.sign(toU(transactionHeaderBytes));
@@ -192,8 +195,8 @@ export const deposit = async (
   const r = await axios.post(
     `${address}/batches`,
     buildBatchWallet(privateKey, {
-        action: 'deposit',
-        value: value,
+      action: 'deposit',
+      value: value,
     }),
     {
       headers: { 'Content-Type': 'application/octet-stream' },
@@ -212,8 +215,8 @@ export const withdraw = async (
   const r = await axios.post(
     `${address}/batches`,
     buildBatchWallet(privateKey, {
-        action: 'withdraw',
-        value: value,
+      action: 'withdraw',
+      value: value,
     }),
     {
       headers: { 'Content-Type': 'application/octet-stream' },
@@ -233,9 +236,9 @@ export const transfer = async (
   const r = await axios.post(
     `${address}/batches`,
     buildBatchWallet(privateKey, {
-        action: 'transfer',
-        value: value,
-        beneficiary_pubkey: beneficiary_pubkey
+      action: 'transfer',
+      value: value,
+      beneficiary_pubkey: beneficiary_pubkey,
     }),
     {
       headers: { 'Content-Type': 'application/octet-stream' },
@@ -259,7 +262,7 @@ export const balance = async (
       if (debug) console.log(result);
       return result;
     }
-  } catch(error) {
+  } catch (error) {
     return undefined;
   }
 };

@@ -19,10 +19,10 @@ jobs:
           node-version: 12
       - name: Install dependencies
         run: yarn
-      - run: yarn cov
-      - run: yarn cov:check
-      - run: yarn cov:send
-      - run: yarn doc
+        #      - run: yarn cov
+        #      - run: yarn cov:check
+        #      - run: yarn cov:send
+        #      - run: yarn doc
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
