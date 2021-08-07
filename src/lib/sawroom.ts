@@ -110,7 +110,7 @@ const buildBatchWallet = (privateKeyHex: string, payload: WalletPayload) => {
   const toU = (ba) => Buffer.from(ba, 'utf8');
 
   const transactionHeaderBytes = protobuf.TransactionHeader.encode({
-    familyName: 'restroom',
+    familyName: 'wallet',
     familyVersion: '1.0',
     inputs: inputs,
     outputs: outputs,
