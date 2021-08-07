@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/dyne/sawroom-client/compare/v1.8.0...v1.8.1) (2021-08-07)
+
+
+### Bug Fixes
+
+* **wallet:** 🐛  Fix name clashing ([a2eb456](https://github.com/dyne/sawroom-client/commit/a2eb45622df05c5733a6dbd4ea0eb5ecb9ad71a9))
+
 # [1.8.0](https://github.com/dyne/sawroom-client/compare/v1.7.0...v1.8.0) (2021-07-31)
 
 
