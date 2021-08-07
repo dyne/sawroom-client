@@ -41,8 +41,9 @@
   },
   "dependencies": {
     "@bitauth/libauth": "^1.17.1",
-    "borc": "^2.1.2",
+    "atob": "^2.1.2",
     "axios": "^0.21.1",
+    "borc": "^2.1.2",
     "sawtooth-sdk": "^1.0.5"
   },
   "devDependencies": {
