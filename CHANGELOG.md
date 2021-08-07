@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/dyne/sawroom-client/compare/v1.8.1...v1.8.2) (2021-08-07)
+
+
+### Bug Fixes
+
+* **wallet:** 🐛  Fix missing deps ([28e73c8](https://github.com/dyne/sawroom-client/commit/28e73c8cbd9f0eeeff127cebcfb5c1ca65f48735))
+
 ## [1.8.1](https://github.com/dyne/sawroom-client/compare/v1.8.0...v1.8.1) (2021-08-07)
 
 
