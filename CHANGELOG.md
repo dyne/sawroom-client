@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/dyne/sawroom-client/compare/v1.8.2...v1.9.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* Changed import for sawtooth-sdk ([#3](https://github.com/dyne/sawroom-client/issues/3)) ([f633e79](https://github.com/dyne/sawroom-client/commit/f633e79198e96ec68980d57f7efbd426ea53e8a0))
+* Fix typescript types definition aliased to sawtooth-sdk ([#4](https://github.com/dyne/sawroom-client/issues/4)) ([0e8faaa](https://github.com/dyne/sawroom-client/commit/0e8faaa1e1140364d26d98727b2f1904e7a0503b))
+
+
+### Features
+
+* package.json now loading @restroom-mw/sawtooth-sdk ([#2](https://github.com/dyne/sawroom-client/issues/2)) ([d02a550](https://github.com/dyne/sawroom-client/commit/d02a55080647cf4a66b41f249485b09317333bc7))
+
 ## [1.8.2](https://github.com/dyne/sawroom-client/compare/v1.8.1...v1.8.2) (2021-08-07)
 
 
