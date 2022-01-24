@@ -1,12 +1,15 @@
 /* eslint-disable functional/immutable-data */
 import { createHash } from 'crypto';
 
+import { protobuf } from '@restroom-mw/sawtooth-sdk';
+import {
+  createContext,
+  CryptoFactory,
+} from '@restroom-mw/sawtooth-sdk/signing';
+import { Secp256k1PrivateKey } from '@restroom-mw/sawtooth-sdk/signing/secp256k1';
 import atob from 'atob';
 import axios from 'axios';
 import cbor from 'borc';
-import { protobuf } from '@restroom-mw/sawtooth-sdk';
-import { createContext, CryptoFactory } from '@restroom-mw/sawtooth-sdk/signing';
-import { Secp256k1PrivateKey } from '@restroom-mw/sawtooth-sdk/signing/secp256k1';
 // import retry from 'async/retry';
 
 type Payload = {
