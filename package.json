@@ -44,7 +44,7 @@
     "atob": "^2.1.2",
     "axios": "^0.21.1",
     "borc": "^2.1.2",
-    "@restroom-mw/sawtooth-sdk": "^1.0.5"
+    "sawtooth-sdk": "hyperledger/sawtooth-sdk-javascript"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",

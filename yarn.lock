@@ -544,16 +544,6 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@restroom-mw/sawtooth-sdk@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@restroom-mw/sawtooth-sdk/-/sawtooth-sdk-1.0.5.tgz#8a83ae2140b9815886b7421f98e77fb4e8f01f5d"
-  integrity sha512-PNb6O3wxcdAjXbJEtjrT0W1TKVmXCR8x7FKr93UzojukIsfctVNeNkBbeLysOKxOkW/zx9cBya+8jlR79wvTlQ==
-  dependencies:
-    protobufjs "^6.7.3"
-    secp256k1 "^3.2.5"
-    uuid "^3.0.1"
-    zeromq "^5.2.8"
-
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"
@@ -6978,6 +6968,15 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+sawtooth-sdk@hyperledger/sawtooth-sdk-javascript:
+  version "1.0.4"
+  resolved "https://codeload.github.com/hyperledger/sawtooth-sdk-javascript/tar.gz/b5a9e254d035fe611f44b1ebb82f3c3e755c4f2d"
+  dependencies:
+    protobufjs "^6.7.3"
+    secp256k1 "^3.2.5"
+    uuid "^3.0.1"
+    zeromq "^5.2.8"
 
 secp256k1@^3.2.5:
   version "3.8.0"
